@@ -15,14 +15,7 @@ class GetAllProductService {
       productmodellist.add(ProductModel.fromJson(data[i]));
              
      }
-     return productmodellist;
-
-
-
-
-    
+     return productmodellist;    
   }
-
-
 
 }
