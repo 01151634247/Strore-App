@@ -14,7 +14,7 @@ class custom_card extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context,UpadateProductPage.id);
+        Navigator.pushNamed(context,UpadateProductPage.id,arguments:productModel);
         
       },
       child: Stack(
