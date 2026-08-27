@@ -28,20 +28,14 @@ class Api {
   headers: headers,
 );
 
-     Map<String ,dynamic> data  =jsonDecode(response.body);
-     return data;
+     if (response.statusCode==200){
+       Map<String ,dynamic> data  =jsonDecode(response.body);
+       return data;
+     }else{
+       throw Exception('there is aproblem with satatus code ${response.statusCode}with Body${jsonDecode(response.body)}');
+
+     }
 }
-
-/**
- * title': 'test product',
-'price':' 13.5',
-'description': 'lorem ipsum set',
-'image': 'https://i.pravatar.cc',
-'category': 'electronic'
- * 
- */
-
-
 
 
 }
