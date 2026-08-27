@@ -33,7 +33,7 @@ class custom_card extends StatelessWidget {
                mainAxisAlignment: MainAxisAlignment.end,
                    crossAxisAlignment: CrossAxisAlignment.start,
                children: [
-                 Text('HandBag LV',style: TextStyle(
+                 Text(productModel.title.substring(0,6),style: TextStyle(
                    color: Colors.grey,
                    fontSize: 18,
                  ),),
@@ -59,7 +59,7 @@ class custom_card extends StatelessWidget {
         Positioned(
            bottom: 100,
            left: -30,
-         child: Image.network(productModel.image,height: 100,width: 300,),
+         child: Image.network(productModel.image,height: 100,width: 100,),
          ),        
       ],
     );
