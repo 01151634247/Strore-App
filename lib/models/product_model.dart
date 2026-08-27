@@ -14,7 +14,11 @@ class ProductModel {
   factory ProductModel.fromJson(jsonData){
     return ProductModel(
       rating: RatingModel.fromJson(jsonData['rating']),
-      id: jsonData['id'], title:jsonData['title'], price: jsonData['price'], description:jsonData ['description'], image:jsonData ['image']);
+      id: jsonData['id'],
+       title:jsonData['title'], 
+      price: jsonData['price'],
+       description:jsonData['description'],
+        image:jsonData['image']);
   }
 
 }

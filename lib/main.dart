@@ -16,7 +16,7 @@ class StoreApp extends StatelessWidget {
       routes: {
         HomePage.id:(context)=>HomePage(),
       },
-   initialRoute: HomePage.id,
+   initialRoute: 'HomePage',
       
       
      

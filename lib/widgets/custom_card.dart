@@ -1,10 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'package:store_app/models/product_model.dart';
 
 class custom_card extends StatelessWidget {
-  const custom_card({
+   custom_card({required this.productModel,
     super.key,
   });
+
+  ProductModel productModel;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +43,7 @@ class custom_card extends StatelessWidget {
                  Row(
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
-                   Text(r'$ 225',style: TextStyle(
+                   Text(productModel.price.toString(),style: TextStyle(
                    fontSize: 18,
                  ),),
                  Icon(Icons.favorite,
@@ -56,7 +59,7 @@ class custom_card extends StatelessWidget {
         Positioned(
            bottom: 100,
            left: -30,
-         child: Image.asset('assets/photo_2024-12-20_22-50-37.png',height: 100,width: 300,),
+         child: Image.network(productModel.image,height: 100,width: 300,),
          ),        
       ],
     );
