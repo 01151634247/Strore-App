@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:store_app/widgets/custom_card.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -23,61 +24,22 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
         title: Text('New Trend',style: TextStyle(color: Colors.black),),),
-       body: Center(
-         child:Stack(
+       body:Padding(
+         padding: const EdgeInsets.only(left: 16,right: 16,top: 70),
+         child: GridView.builder(
           clipBehavior: Clip.none,
-           children: [
-             Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 40,
-                    color: Colors.grey.withOpacity(0),
-                    spreadRadius: 0,
-                    offset: Offset(10, 10),
-                  ),
-                ]
-              ),
-              height: 130,
-              width: 220,
-               child: Card(
-                elevation: 10,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 16),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('HandBag LV',style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 18,
-                      ),),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                        Text(r'$ 225',style: TextStyle(
-                        fontSize: 18,
-                      ),),
-                      Icon(Icons.favorite,
-                      color: Colors.red,),
-                  
-                      ],),
-                    ],
-                  ),
-                ),
-               ),
-             ),
-
-             Positioned(
-                bottom: 90,
-              child: Image.asset('assets/photo_2024-12-20_22-50-37.png',height: 100,width: 300,),
-              ),        
-           ],
-         ),
+          itemCount: 10,
+          gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 100,
+            childAspectRatio:1.4 ,
+            ), 
+         itemBuilder: (context,index){
+          return custom_card();
+         }),
        ),
     );
   }
 }
+
